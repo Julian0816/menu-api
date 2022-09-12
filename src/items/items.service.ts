@@ -43,8 +43,8 @@ export const find = async (id: number): Promise<Item> => items[id];
 
 
 //Method to create a new item in the store
-export const create = async (newItem: BaseItem) => {
-    const id = new Date().valueOf();
+export const create = async (newItem: BaseItem): Promise<Item> => {
+    const id = new Date().valueOf(); //This is what gives a unique id to each item
 
     items[id] = {
         id,
