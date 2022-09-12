@@ -4,7 +4,7 @@ export interface BaseItem {
     name: string;
     price: number;
     decription: string;
-    img: string;
+    image: string;
 }
 
 export interface Item extends BaseItem {
