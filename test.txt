@@ -1,3 +1,12 @@
+my API
+http://localhost:3001/api/menu/items/
 
-Here! one more try
+Post example
+{
+        "id": 13,
+        "name": "Family Platter",
+        "price": 49.95,
+        "decription": "2 Whole Chickens and 5 large sides. Perfect for 4-6 people.",
+        "image": "https://images.menu.nandos.dev/uk/sharing-platters/640x360/family-platter-51.Image-16-9.102046.jpg"
+}
 

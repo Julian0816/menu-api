@@ -11,7 +11,7 @@ import { errorHandler } from "./middleware/error.middleware";
 import { notFoundHandler } from "./middleware/not-found.middleware";
 
 dotenv.config();
-
+require('./db/config')
 
 /**
  * App Variables (Loading the envitomental variable PORT into the process.env and creating an instance of express)
@@ -33,7 +33,7 @@ const app = express();
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
-app.use("/api/menu/items", itemsRouter); //Watch out for this, not very convinced with that path
+app.use("/api/menu", require('./routers/menu-item-list')); //Watch out for this, not very convinced with that path
 
 app.use(errorHandler);
 app.use(notFoundHandler);
