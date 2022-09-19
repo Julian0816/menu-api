@@ -1,27 +1,45 @@
-import { Sequelize, Model } from "sequelize";
+import {  Model, DataTypes } from "sequelize";
+import db from '../database/config';
 
-const { DataTypes } = require('sequelize');
-const { sequelize } = require('../db/config');
 
-/* Define the model!  Here are the details:
 
-Create a new Item file in the models directory
-The Item model should have name and image properties, both of which are strings
-The Item model should also have price (number) and vegetarian (boolean) properties */
 
-const Item: any = sequelize.define('Item', {
+
+interface ItemAttributes {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  imagen: string;
+}
+
+
+export class ItemInstance extends Model<ItemAttributes> { }
+
+
+ItemInstance.init(
+  {
+    id: {
+      type: DataTypes.UUIDV4,
+      primaryKey: true,
+      allowNull: false,
+    },
     name: {
-        type: DataTypes.STRING
+      type: DataTypes.STRING
     },
     description: {
-        type: DataTypes.STRING
+      type: DataTypes.STRING
     },
-    precio: {
-        type: DataTypes.INTEGER
+    price: {
+      type: DataTypes.INTEGER
     },
     imagen: {
-        type: DataTypes.STRING
+      type: DataTypes.STRING
     }
-})
 
-module.exports = {Item}
+  },
+  {
+    sequelize: db,
+    tableName: 'menuItems',
+  }
+);

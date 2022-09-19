@@ -1,6 +1,9 @@
+
 const { Sequelize } = require('sequelize');
 const path = require('path');
-const sequelize  = new Sequelize('sqlite::memory:', {
+
+
+export const db  = new Sequelize('sqlite::memory:', {
     dialect: 'sqlite',
     storage: path.join(__dirname, 'db.sqlite'),
     logging: false
@@ -14,6 +17,8 @@ const sequelize  = new Sequelize('sqlite::memory:', {
 //         console.error('Unable to connect to the database:', error);
 //     }
 // }
-
-
-module.exports = { sequelize };
+// connection()
+//  module.exports = {
+//    sequelize, connection
+// }
+export default db;
