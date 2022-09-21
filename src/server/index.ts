@@ -18,7 +18,7 @@ server.use(express.static(path.join(__dirname, '../dist')));
 
 // api router
 server.use('/api/menu', require('../routers/menu-item-list'));
-
+server.use('/api/order', require('../routers/order'));
 
 
 export default server;

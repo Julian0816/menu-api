@@ -5,7 +5,7 @@ import db from '../database/config';
 
 
 
-interface ItemAttributes {
+ export interface ItemAttributes {
   id: string;
   name: string;
   description: string;

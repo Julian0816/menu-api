@@ -13,15 +13,19 @@ const getMenu = async (req: Request, res: Response) => {
 }
 
 const addItem = async (req: Request, res: Response) => {
-    const {name, price, description, image} = req.body;
+
+    const {name, price, description, imagen} = req.body;
     try {
+    
+        const id = uuidv4();
+
         const item = await ItemInstance.findOne({where: {name}});
-        console.log(item);
+       
         if(item) {
             return res.status(400).json({ok: false, msg: 'Item already exists'});
         } else {
-            const newItem = await ItemInstance.create({name, price, description, image});
-            return res.status(201).json({ok: true, msg: `Item has been added ${newItem.name} with Id ${newItem.id}`});
+            const newItem = await ItemInstance.create({id, name, price, description, imagen});
+            return res.status(201).json({ok: true, newItem});
         }
     } catch (error) {
         console.log(error)
