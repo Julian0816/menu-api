@@ -2,7 +2,7 @@
 
 In this small project I have used Node.js, Typescript and Express.
 
-# I have used the following dependencies as well as their types for typescript
+## I have used the following dependencies as well as their types for typescript
 
 express: as web framework
 
@@ -17,7 +17,7 @@ helmet: middlewear
 #install your node_modules with 
 npm install
 
-## Create a PORT=3001 in the .env document as that is the port that the front end part of the project will look for.
+## Set the following port in the .env file
 PORT=3001
 
 ## To start the server use the command
