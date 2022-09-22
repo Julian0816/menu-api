@@ -21,7 +21,7 @@ OrderInstance.init(
       allowNull: false,
     },
     items: {
-      type: Sequelize.ARRAY(Sequelize.TEXT),
+      type: Sequelize.ARRAY(DataTypes.JSONB),
       defaultValue: [],
     },
     total: {
