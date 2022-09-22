@@ -12,10 +12,9 @@ const getOrders = async (req: Request, res: Response) => {
 }
 const addOrders = async (req: Request, res: Response) => {
     const { items, total } = req.body;
-    console.log(total);
     try {
         const id = uuidv4();
-        const order = await OrderInstance.create({ id, items, total });
+        const order = await OrderInstance.create({ id, items,total });
         if(order){
             return res.status(201).json({ ok: true, order });
         }else{

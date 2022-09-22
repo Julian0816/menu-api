@@ -25,7 +25,7 @@ OrderInstance.init(
       defaultValue: [],
     },
     total: {
-        type: DataTypes.FLOAT,
+        type: DataTypes.INTEGER
       },
 
   },
